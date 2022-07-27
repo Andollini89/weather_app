@@ -39,6 +39,13 @@ Once you are done run the following command to install the required dependancies
 
     python3 -m pip install -r requirements.txt
 
+#### Api weather account:
+go to [openweathermap.org](https://openweathermap.org) and get your account with the API Key
+
+now run from terminal in weather_app folder the folliwing command:
+    
+    sudo touch .env && sudo echo -e '\nAPIKEY=yourApiKeyFromOpenWeather' >> .env
+
 #### __To run the programm__ run :
 
     python3 weatherApp.py
