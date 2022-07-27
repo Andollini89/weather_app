@@ -5,7 +5,7 @@ The widget app will give you the reading via openweather Api of the current weat
 
 it will change background and foreground colors to match the current wheather condition and more features.
 
-```27/07/2022: the project is in is very early stage and need more work to do wat it promise so be patient for the complete version.```
+```27/07/2022: the project is in his very early stage and need more work to do wat it promise so be patient for the complete version.```
 ## Prerequisites:
 
 - RaspberryPI
