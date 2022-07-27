@@ -26,7 +26,7 @@ To keep your system clear from unecessary packages that can only be used for thi
     
     cd 'your path to weather_app
 
-    sudo python3 -m v-env weather_app
+    sudo python3 -m venv weather_app
     
 To activate the virtual envoirment run:
 
