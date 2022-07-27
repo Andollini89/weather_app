@@ -203,5 +203,5 @@ label_humidity = tk.Label(
         )
 
 set_weather_labels_data(get_wheather())
-temp_reader(gpio)
+temp_reader()
 window.mainloop()
