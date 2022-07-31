@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import os
+import time
 import adafruit_dht
 import board 
 import tkinter as tk
@@ -85,23 +86,24 @@ def set_weather_labels_data(data):
     weatherFrame.after(120000, set_weather_labels_data, get_wheather())
 
 def temp_reader():
-    h,t = 0,0
+    h,t = None, None
     try:
         h = sensor.humidity
         t = sensor.temperature
     except RuntimeError as error:
         print(error)
-        pass
-    
-    if h is not None and humidity_text.get() != f"{h}%":
-        humidity_text.set(f"{h}%")
-    if t is not None and temperature_text.get() != f"{t}°C":
-        temperature_text.set(f'{t}°C')
+        time.sleep(3)
+        temp_reader()
+    finally:
+        if h is not None and humidity_text.get() != f"{h}%":
+            humidity_text.set(f"{h}%")
+        if t is not None and temperature_text.get() != f"{t}°C":
+            temperature_text.set(f'{t}°C')
 
     date_text.set(datetime.now().strftime('%Y-%m-%d'))
     time_text.set(datetime.now().strftime('%H:%M'))
     
-    window.after(10000, temp_reader)
+    window.after(60000, temp_reader)
 
 # initialize window
 window = tk.Tk()
@@ -111,8 +113,6 @@ window.geometry(f'{screenWidth}x{screenHeight}')
 # window.attributes('-fullscreen', True)
 
 sensor = adafruit_dht.DHT11(board.D27)      
-new_h = 0
-new_t = 0
 
 # set grid columns
 window.columnconfigure(0, weight=1)
