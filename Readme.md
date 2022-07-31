@@ -32,7 +32,7 @@ To activate the virtual envoirment run:
 
     source weather_app/bin/activate
 
-On RaspberryPi you may find troubles when tryng to modify files in the virtual envoirment as is been created with the suco command.
+On RaspberryPi you may find troubles when tryng to modify files in the virtual envoirment as is been created with the sudo command.
 
 If so you need to gain the writing permissions via ```chown``` command or ```chmod``` command
 
